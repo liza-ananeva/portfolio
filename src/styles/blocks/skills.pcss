@@ -1,9 +1,44 @@
 .skills {
-  @include phones {
-    text-align: center;
-  }
+    display: flex;
 }
 
 .skills__item {
-  margin-bottom: 30px;
+    margin-right: 64px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.skill {
+    position: relative;
+    width: 143px;
+    height: 143px;
+}
+
+.skill__circle {
+    fill: transparent;
+
+    &--layer-under {
+        stroke: rgba(#e9e9e9, .1);
+        stroke-width: 3px;
+    }
+
+    &--layer-above {
+        stroke-width: 10px;
+        stroke-dasharray: 251;
+        stroke-dashoffset: 145;
+        /* transform: rotate(180 50 50); */
+    }
+}
+
+.skill__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba($text-color, .5);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
 }
