@@ -6,12 +6,12 @@ block content
             main.container.hero__container
                 header.header
                     .header__logo
-                        a.logo(href='#') ЕА
+                        .logo ЕА
                     nav.header__menu
                         ul.menu
                             each item in ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
                                 li.menu__item
-                                    a.menu__link(href='#') #{item}
+                                    a.menu__link(href='#', title=`${item}`) #{item}
                     .header__socials
                         ul.socials
                             each item in ['instagram', 'github', 'vk', 'envelope']
@@ -23,8 +23,8 @@ block content
                         .userinfo__title Личный сайт #[span.userinfo__occ веб разработчика]
                         .userinfo__name Елизавета#[br]Ананьева-Рященко
                 .hero__scroll-down
-                    .scroll-down
-                        a.scroll-down__btn(href='#') Скролл
+                    a(href='#').scroll-down-btn
+                        .scroll-down-btn__inner Скролл
         section.about
             main.container.about__container
                 .about__user
@@ -45,9 +45,9 @@ block content
                                     td.user__data-content #{item[1]}
                 .about__intro
                     .about__greeting-text Привет, меня зовут
-                    .section-title.about__title Елизавета Ананьева-Рященко
+                    .section-title.about__title Елизавета #[span.user__lastname Ананьева-Рященко]
                     .about__desc
-                        p Я занимаюсь разработкой современных сайтов и приложений.#[br]Мне нравится делать интересные и современные проекты.
+                        p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                     .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,#[br]как тут всё классно и красиво!
     section.values
         main.container.values__container
@@ -127,7 +127,7 @@ block content
                                     occ: 'Основатель Loftschool'
                                 },
                                 {
-                                    text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.',
+                                    text: 'Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах.',
                                     picture: 'vladimir',
                                     name: 'Владимир Сабанцев',
                                     occ: 'Преподаватель'
@@ -158,7 +158,7 @@ block content
                     ul.menu
                         each item in ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
                             li.menu__item
-                                a.menu__link(href='#') #{item}
+                                a.menu__link(href='#', title=`${item}`) #{item}
                 .footer__inner
                     .footer__inner-column
                         .footer__contacts

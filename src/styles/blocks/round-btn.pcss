@@ -23,4 +23,12 @@
             transform: translate(-50%, -50%) rotate(-180deg);
         }
     }
+
+    &:hover {
+        border-color: #ff9a00;
+
+        &:before {
+            background: svg-load('arrow-down.svg', fill=#ff9a00) center center / contain no-repeat;
+        }
+    }
 }

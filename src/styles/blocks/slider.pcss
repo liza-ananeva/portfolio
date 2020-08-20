@@ -1,11 +1,12 @@
 .slider {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
 .slider__display {
     width: 975px;
-    height: 549px;
+    /* height: 549px; */
     z-index: 10;
     position: relative;
 
@@ -27,25 +28,25 @@
     height: 100px;
     position: absolute;
     right: 0;
-    bottom: 60px;
+    bottom: 10.93%; //60px
 }
 
 .slider__btns {
     position: absolute;
     left: 100%;
-    bottom: 60px;
+    bottom: 10.93%; //60px
 }
 
 .slider__info {
-    width: 23.5%;
+    /* width: 23.5%; */
+    max-width: 476px;
     z-index: 10;
+    padding-top: 3px;
+    padding-left: 128px;
 }
 
 .slider__tags {
     margin-bottom: 35px;
-}
-
-.slider__info-text {
 }
 
 .slider__info-title {

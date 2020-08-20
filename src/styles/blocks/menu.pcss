@@ -16,4 +16,17 @@
 
 .menu__link {
     white-space: nowrap;
+
+    &:hover {
+        font-weight: 600;
+    }
+
+    &:after {
+        content: attr(title);
+        display: block;
+        font-weight: 600;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
 }
