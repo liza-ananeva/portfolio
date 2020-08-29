@@ -12,15 +12,19 @@ block content
                             each item in ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
                                 li.menu__item
                                     a.menu__link(href='#', title=`${item}`) #{item}
-                    .header__socials
-                        ul.socials
-                            each item in ['instagram', 'github', 'vk', 'envelope']
-                                    li.socials__item
-                                        a.socials__link(href='#')
-                                            +icon(item, 'socials__icon')    
+                    .header__btns
+                        .header__socials
+                            ul.socials
+                                each item in ['instagram', 'github', 'vk', 'envelope']
+                                        li.socials__item
+                                            a.socials__link(href='#')
+                                                +icon(item, 'socials__icon')
+                        .header__hamburger-menu-link
+                            a(href='#').hamburger-menu-link
+                                .hamburger-menu-link__bars
                 .hero__content
                     .userinfo
-                        .userinfo__title Личный сайт #[span.userinfo__occ веб разработчика]
+                        .userinfo__title Личный сайт #[br]#[span.userinfo__occ веб-разработчика]
                         .userinfo__name Елизавета#[br]Ананьева-Рященко
                 .hero__scroll-down
                     a(href='#').scroll-down-btn

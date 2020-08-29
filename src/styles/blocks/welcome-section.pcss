@@ -1,3 +1,17 @@
 .welcome-section {
-    background: url('~images/bg/hero.jpg') center top / cover no-repeat;
+    background: #1b1f22 url('~images/bg/hero.jpg') center top / cover no-repeat;
+
+    @include desktop {
+        background-image: url('~images/bg/hero-desktop.jpg');
+    }
+
+    @include tablets {
+        
+        background-image: url('~images/bg/hero-tablets.jpg');
+        background-size: contain;
+    }
+
+    @include phones {
+        background-image: url('~images/bg/hero-phones.jpg');
+    }
 }
