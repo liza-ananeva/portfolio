@@ -1,6 +1,6 @@
 .values {
     background: url('~images/bg/values.jpg') center center / cover no-repeat;
-    padding: 138px 0 142px;
+    padding: 138px 0 126px;
     position: relative;
 
     &:before {
@@ -8,10 +8,44 @@
         position: absolute;
         background: url('~images/decor/hands.png') left bottom / contain no-repeat;
         display: block;
-        bottom: -91px; //-9.1% -91px
-        height: 97%;
         width: 37%;
+        height: 97%;
+        bottom: -91px; //-9.1%
         left: 0;
+    }
+
+    @include desktop {
+        padding: 142px 0 126px;
+
+        &:before {
+            width: 41%;
+            height: 72%;
+            bottom: -85px;
+            left: -85px;
+        }
+    }
+
+    @include tablets {
+        padding: 59Px 0 41.797%; //321Px
+
+        &:before {
+            background: url('~images/decor/hands-tablets.png') center bottom / contain no-repeat;
+            width: 63%;
+            height: 33%;
+            bottom: 0;
+            left: 18.3%;
+        }
+    }
+
+    @include phones {
+        padding: 82Px 0 252Px;
+
+        &:before {
+            width: 100vw;
+            height: 21%;
+            bottom: 0;
+            left: 0;
+        }
     }
 }
 
@@ -19,31 +53,105 @@
     margin-bottom: 79px;
     display: flex;
     justify-content: center;
-    padding-left: 124px;
+    padding-left: 128px;
+
+    @include desktop {
+        padding-left: 69px;
+        margin-bottom: 93px;
+    }
+
+    @include tablets {
+        padding-left: 0;
+        margin-bottom: 50Px;
+    }
+
+    @include phones {
+        margin-bottom: 69Px;
+    }
 }
 
 .values__title-container {
-    width: 44%;
+    width: 600px;
+    z-index: 10;
+
+    @include tablets {
+        width: 510px;
+        text-align: center;
+    }
+
+    @include phones {
+        width: 100%;
+        text-align: left;
+    }
 }
 
 .values__title-text {
-    font-size: 30px;
     font-weight: bold;
-    line-height: 41px;
+    font-size: 30Px;
+    line-height: 41Px;
     margin-bottom: 53px;
+
+    @include desktop {
+        margin-bottom: 39px;
+    }
+
+    @include tablets {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 28Px;
+    }
+
+    @include phones {
+        width: 96%;
+        font-size: 24Px;
+        line-height: 36Px;
+    }
 }
 
 .values__title-subtext {
     font-weight: 600;
+    font-size: 16px;
     line-height: 30px;
+
+    @include tablets {
+        font-size: 14Px;
+        line-height: 24Px;
+    }
+
+    @include phones {
+        width: 103%;
+    }
 }
 
 .values__widget {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 58px;
+    min-width: 57.55%;
+    max-width: 67%;
+    width: fit-content;
+    margin-left: auto;
+
+    @include desktop {
+        min-width: 67%;
+        max-width: 73%;
+    }
+
+    @include tablets {
+        min-width: 84%;
+        max-width: 100%;
+        margin-left: 0;
+        margin: 0 auto;
+    }
 }
 
 .values__widget-container {
-    width: 56%;
+    width: 770px;
+    z-index: 10;
+
+    @include desktop {
+        width: 740px; //735px
+    }
+
+    @include tablets {
+        width: 100%;
+    }
 }
