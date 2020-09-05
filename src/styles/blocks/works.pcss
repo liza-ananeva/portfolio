@@ -4,8 +4,42 @@
     justify-content: center;
     color: #333c49;
     padding: 197px 0 209px;
+    overflow: hidden;
+
+    @include desktop {
+        padding: 146px 0 113.9Px;
+    }
+
+    @include tablets {
+        padding: 119Px 0 111.5Px;
+    }
+
+    @include phones {
+        padding: 91Px 0 97Px;
+    }
+}
+
+.works__container {
+    @include phones {
+        width: 100%;
+    }
 }
 
 .works__title {
     margin-bottom: 83px;
+
+    @include desktop {
+        padding-left: 10px;
+    }
+
+    @include tablets {
+        padding-left: 22Px;
+        margin-bottom: 48Px;
+    }
+
+    @include phones {
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 25Px;
+    }
 }
