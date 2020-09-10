@@ -3,5 +3,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 138px 0 198px;
+    padding: 139px 0 198px;
+
+    @include desktop {
+        padding: 141px 0 195px;
+    }
+
+    @include tablets {
+        padding: 121Px 0 146Px;
+    }
+
+    @include phones {
+        padding: 70Px 0 60Px;
+    }
+}
+
+.reviews__container {
+    @include desktop {
+        max-width: 1080px;
+    }
+
+    @include tablets {
+        max-width: 92%;
+        margin-left: 5vw;
+    }
+
+    @include phones {
+        margin: 0 auto;
+    }
 }

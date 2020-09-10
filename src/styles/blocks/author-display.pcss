@@ -5,11 +5,19 @@
 
 .author-display__picture {
     margin-right: 30px;
+
+    @include tablets {
+        margin-right: 2.3vw;
+    }
+
+    @include phones {
+        margin-right: 11Px;
+    }
 }
 
 .author-display__picture-style {
-    width: 75px;
-    height: 75px;
+    width: 75Px;
+    height: 75Px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
@@ -23,6 +31,14 @@
 
 .author-display__about {
     padding-top: 5px;
+
+    @include tablets {
+        padding-top: 0;
+    }
+
+    @include phones {
+        padding-top: 5Px;
+    }
 }
 
 .author-display__name {
@@ -31,6 +47,16 @@
     font-size: 18px;
     line-height: 25px;
     margin-bottom: 12px;
+
+    @include tablets {
+        font-size: 16Px;
+        line-height: 22Px;
+        margin-bottom: 13Px;
+    }
+
+    @include phones {
+        margin-bottom: 6Px;
+    }
 }
 
 .author-display__occ {
@@ -38,4 +64,9 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
+
+    @include tablets {
+        font-size: 14Px;
+        line-height: 19Px;
+    }
 }

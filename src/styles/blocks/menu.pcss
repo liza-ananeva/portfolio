@@ -4,6 +4,15 @@
     &--color-east-bay {
         color: #414C63;
     }
+
+    @include tablets {
+        justify-content: space-between;
+    }
+
+    @include phones {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
 }
 
 .menu__item {
@@ -15,6 +24,16 @@
 
     @include desktop {
         margin-right: 5vw;
+    }
+
+    @include tablets {
+        margin-right: 11Px;
+    }
+
+    @include phones {
+        width: 50%;
+        margin-right: 0;
+        margin-bottom: 22Px;
     }
 }
 
@@ -32,5 +51,10 @@
         height: 0;
         overflow: hidden;
         visibility: hidden;
+    }
+
+    @include tablets {
+        font-size: 14Px;
+        line-height: 19Px;
     }
 }

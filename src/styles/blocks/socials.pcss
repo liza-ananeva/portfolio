@@ -3,11 +3,11 @@
 
     &--round-borders {
         .socials__item {
-            width: 50px;
-            height: 50px;
-            border: 1px solid rgba($text-color, .3);
+            width: 50Px;
+            height: 50Px;
+            border: 1Px solid rgba($text-color, .3);
             border-radius: 50%;
-            margin-right: 21px;
+            margin-right: 21Px;
 
             &:hover {
                 border-color: #ff9a00;
@@ -15,6 +15,18 @@
                 .socials__icon {
                     fill: #ff9a00;
                 }
+            }
+
+            @include desktop {
+                margin-right: 1.75vw;
+            }
+
+            @include tablets {
+                margin-right: 2.735vw; //21px
+            }
+
+            @include phones {
+                margin-right: 21Px;
             }
         }
         

@@ -156,7 +156,7 @@ block content
                 .footer__copyright-year &copy; 2020
                 .footer__copyright-userinfo
                     .footer__copyright-username Елизавета#[br]Ананьева-Рященко
-                    .footer__copyright-usertext Личный сайт#[br]веб-разработчика
+                    .footer__copyright-usertext Личный сайт #[span.footer__copyright-userocc веб-разработчика]
             .footer__info
                 nav.footer__menu
                     ul.menu
@@ -164,7 +164,7 @@ block content
                             li.menu__item
                                 a.menu__link(href='#', title=`${item}`) #{item}
                 .footer__inner
-                    .footer__inner-column
+                    .footer__inner-column.footer__inner-column--contacts
                         .footer__contacts
                             .footer__comment
                                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
@@ -174,7 +174,7 @@ block content
                                             li.socials__item
                                                 a.socials__link(href='#')
                                                     +icon(item, 'socials__icon')    
-                    .footer__inner-column
+                    .footer__inner-column.footer__inner-column--quote
                         .footer__quote
                             .footer__quote-text
                                 p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете.

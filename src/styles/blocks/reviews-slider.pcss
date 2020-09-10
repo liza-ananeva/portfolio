@@ -1,11 +1,46 @@
+.reviews-slider {
+    width: 68%;
+
+    @include desktop {
+        width: 93%;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
 .reviews-slider__header {
     display: flex;
     align-items: flex-end;
     margin-bottom: 78px;
+
+    @include tablets {
+        align-items: center;
+        margin-bottom: 48Px;
+    }
+
+    @include phones {
+        flex-direction: column;
+        margin-bottom: 55Px;
+    }
 }
 
 .reviews-slider__title {
     margin-right: 115px;
+
+    @include desktop {
+        margin-right: 9.7vw;
+    }
+
+    @include tablets {
+        margin-right: 4vw;
+    }
+
+    @include phones {
+        margin-right: 0;
+        margin-bottom: 20Px;
+    }
 }
 
 .reviews-slider__btns {
@@ -13,7 +48,7 @@
 }
 
 .reviews-slider__btn {
-    margin-right: 28px;
+    margin-right: 28Px;
     
     &:last-child {
         margin-right: 0;
@@ -22,8 +57,11 @@
 
 .reviews-slider__content {
     color: rgba($text-color, .6);
-    padding-right: 26.5vw;
     overflow: hidden;
+
+    @include desktop {
+        padding-right: 0;
+    }
 }
 
 .reviews-slider__quotes {
@@ -35,9 +73,21 @@
     width: 50%;
     flex-shrink: 0;
     padding-right: 60px;
-    /* margin-right: 60px; */
 
     &:last-child {
         margin-right: 0;
+    }
+
+    @include desktop {
+        padding-right: 5vw;
+    }
+
+    @include tablets {
+        padding-right: 3vw;
+    }
+
+    @include phones {
+        width: 100%;
+        padding: 0;
     }
 }

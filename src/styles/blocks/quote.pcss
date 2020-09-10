@@ -12,6 +12,35 @@
         top: 12px;
         left: 0;
     }
+
+    @include desktop {
+        padding-left: 8.17vw;
+        
+        &:before {
+            width: 6.417vw;
+            height: 4.78vw;
+            top: 19px;
+        }
+    }
+
+    @include tablets {
+        padding-left: 5.4vw;
+
+        &:before {
+            width: 4.818vw; //37px
+            height: 3.516vw; //27px
+            top: 10Px;
+            left: -1Px;
+        }
+    }
+
+    @include phones {
+        padding-left: 1.875vw;
+
+        &:before {
+            display: none;
+        }
+    }
 }
 
 .quote__text {
@@ -19,7 +48,17 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 30px;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
+
+    @include tablets {
+        font-size: 14Px;
+        line-height: 24Px;
+        margin-bottom: 14Px;
+    }
+
+    @include phones {
+        margin-bottom: 16Px;
+    }
 }
 
 .quote__author {
