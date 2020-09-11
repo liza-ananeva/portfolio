@@ -1,6 +1,8 @@
 {
   "text-color": "#fff",
+  "east-bay-color": "#414C63",
   "links-color": "#586ed3",
+  "hover-color": "#ff9a00",
   "errors-color": "#cd1515",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",

@@ -1,8 +1,33 @@
 .menu {
     display: flex;
 
-    &--color-east-bay {
-        color: #414C63;
+    &--hamburger {
+        flex-direction: column;
+        color: $east-bay-color;
+
+        .menu__item {
+            margin-right: 0;
+            margin-bottom: 23Px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .menu__link {
+            font-weight: 600;
+            font-size: 18Px;
+            line-height: 25Px;
+
+            &:hover {
+                font-weight: 700;
+            }
+
+            &:after {
+                content: attr(title);
+                font-weight: 700;
+            }
+        }
     }
 
     @include tablets {

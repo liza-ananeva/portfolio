@@ -1,11 +1,19 @@
-.hamburger-menu-link {
+.hamburger-link {
     height: 24Px;
     display: flex;
     align-items: center;
     position: relative;
+
+    &:hover {
+        .hamburger-link__bars {
+            &, &:before, &:after {
+                background-color: $hover-color;
+            }
+        }
+    }
 }
 
-.hamburger-menu-link__bars {
+.hamburger-link__bars {
     &, &:before, &:after {
         width: 29.6Px;
         height: 4Px;

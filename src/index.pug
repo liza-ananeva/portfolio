@@ -19,9 +19,9 @@ block content
                                         li.socials__item
                                             a.socials__link(href='#')
                                                 +icon(item, 'socials__icon')
-                        .header__hamburger-menu-link
-                            a(href='#').hamburger-menu-link
-                                .hamburger-menu-link__bars
+                        .header__hamburger-link
+                            a(href='#').hamburger-link
+                                .hamburger-link__bars
                 .hero__content
                     .userinfo
                         .userinfo__title Личный сайт #[br]#[span.userinfo__occ веб-разработчика]
@@ -170,7 +170,7 @@ block content
                                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                             .footer__socials
                                 ul.socials.socials--round-borders
-                                    each item in ['instagram', 'github', 'vk', 'envelope']
+                                    each item in ['instagram', 'vk', 'github', 'envelope']
                                             li.socials__item
                                                 a.socials__link(href='#')
                                                     +icon(item, 'socials__icon')    
@@ -179,3 +179,20 @@ block content
                             .footer__quote-text
                                 p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете.
                             .footer__quote-author Martin Golding
+    .hamburger
+        .hamburger__logo
+            .logo ЕА
+        .hamburger__container
+            a.hamburger__close(href='#')
+                +icon('cross', 'hamburger__close-icon')
+            .hamburger__menu
+                ul.menu.menu--hamburger
+                    each item in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы']
+                        li.menu__item
+                            a.menu__link(href='#', title=`${item}`) #{item}
+            .hamburger__socials
+                ul.socials.socials--hamburger
+                    each item in ['instagram', 'vk', 'github', 'envelope']
+                            li.socials__item
+                                a.socials__link(href='#')
+                                    +icon(item, 'socials__icon')

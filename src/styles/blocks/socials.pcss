@@ -10,10 +10,10 @@
             margin-right: 21Px;
 
             &:hover {
-                border-color: #ff9a00;
+                border-color: $hover-color;
 
                 .socials__icon {
-                    fill: #ff9a00;
+                    fill: $hover-color;
                 }
             }
 
@@ -39,6 +39,16 @@
             transform: translate(-50%, -50%);
         }
     }
+
+    &--hamburger {
+        .socials__item {
+            margin-right: 39Px;
+        }
+
+        .socials__icon {
+            fill: $east-bay-color;
+        }
+    }
 }
 
 .socials__item {
@@ -52,7 +62,7 @@
 
     &:hover {
         .socials__icon {
-            fill: #ff9a00;
+            fill: $hover-color;
         }
     }
 }

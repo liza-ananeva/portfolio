@@ -1,0 +1,80 @@
+.hamburger {
+    position: relative;
+    display: none;
+
+    @include tablets {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: $east-bay-color;
+        background: $text-color;
+        transition: opacity .3s;
+        z-index: 1000;
+
+        &--visible {
+            display: flex;
+            opacity: 1;
+        }
+    }
+}
+
+.hamburger__logo {
+    width: 57%;
+    padding: 49Px 0 0 40Px;
+    background: url('~images/bg/hamburger.jpg') center top / cover no-repeat;
+
+    @include phones {
+        width: 0;
+        padding: 0;
+    }
+}
+
+.hamburger__container {
+    width: 43%;
+    min-width: 330Px;
+    padding: 0 51Px;
+    margin: auto 0;
+
+    @include phones {
+        width: 100%;
+        min-width: 320Px;
+        padding: 0 14.375%; //46px
+    }
+}
+
+.hamburger__close {
+    width: 30Px;
+    height: 30Px;
+    display: block;
+    padding: 5Px;
+    position: absolute;
+    top: 55Px;
+    right: 40Px;
+
+    &:hover {
+        .hamburger__close-icon {
+            fill: $hover-color;
+        }
+    }
+
+    @include phones {
+        top: 30Px;
+        right: 30Px;
+    }
+}
+
+.hamburger__close-icon {
+    width: 20Px;
+    height: 20Px;
+    fill: $east-bay-color;
+}
+
+.hamburger__menu {
+    margin-bottom: 95.5Px;
+
+    @include phones {
+        margin-bottom: 118.5Px;
+    }
+}
