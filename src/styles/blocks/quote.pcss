@@ -1,31 +1,27 @@
 .quote {
-  padding-left: 24%;
-  position: relative;
+    position: relative;
+    padding-left: 98px;
 
-  @include tablets {
-    padding-left: 0;
-  }
-
-  &:before {
-    content: "";
-    display: block;
-    width: 18%;
-    height: 37%;
-    opacity: .05;
-    background: svg-load('quote.svg', fill=$text-color) center center / contain no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    @include tablets {
-      background: none;
+    &:before {
+        content: '';
+        display: block;
+        background: svg-load('quote.svg', fill=#303133) center center / contain no-repeat;
+        width: 77px;
+        height: 57.4px;
+        position: absolute;
+        top: 12px;
+        left: 0;
     }
-  }
 }
 
 .quote__text {
-  margin-bottom: 30px;
-  color: rgba($text-color, .5);
-  font-weight: 600;
-  line-height: 1.8;
+    min-height: 121px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 31px;
+}
+
+.quote__author {
+    display: flex;
 }

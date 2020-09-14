@@ -1,90 +1,49 @@
 .values {
-  margin-bottom: 114px;
+    background: url('~images/bg/values.jpg') center center / cover no-repeat;
+    padding: 138px 0 142px;
+    position: relative;
 
-  @include phones {
-    margin-bottom: 75px;
-  }
-}
-
-.values__container {
-  position: relative;
-  @include tablets {
-    padding-bottom: 350px;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    background: url('~images/decor/bag.jpg') left bottom / contain no-repeat;
-    display: block;
-    bottom: 5%;
-    height: 79%;
-    width: 69%;
-    left: -20%;
-    @include tablets {
-      bottom: 0;
-      left: 50%;
-      height: 300px;
-      transform: translateX(-50%);
-      background-position: center center;
+    &:before {
+        content: '';
+        position: absolute;
+        background: url('~images/decor/hands.png') left bottom / contain no-repeat;
+        display: block;
+        bottom: -91px; //-9.1% -91px
+        height: 97%;
+        width: 37%;
+        left: 0;
     }
-
-    @include phones {
-      width: 100%;
-    }
-  }
-}
-
-.values__wrapper {
-  position: relative;
 }
 
 .values__title {
-  margin-bottom: 82px;
-  display: flex;
-  justify-content: center;
+    margin-bottom: 79px;
+    display: flex;
+    justify-content: center;
+    padding-left: 124px;
 }
 
 .values__title-container {
-  width: 38%;
-  margin-left: 6%;
-  @include desktop {
-    width: 42%;
-    margin-left: 0;
-  }
-  @include tablets {
-    width: 68%;
-    text-align: center;
-  }
-  @include phones {
-    width: 100%;
-    margin-left: 0;
-    text-align: left;
-  }
+    width: 44%;
 }
 
 .values__title-text {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 55px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 41px;
+    margin-bottom: 53px;
 }
 
-.values__content {
-  color: rgba($text-color, .5);
-  font-weight: 600;
-  line-height: 1.8;
+.values__title-subtext {
+    font-weight: 600;
+    line-height: 30px;
 }
 
 .values__widget {
-  display: flex;
-  justify-content: flex-end;
-  @include tablets {
-    justify-content: center;
-  }
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 58px;
 }
 
 .values__widget-container {
-  width: 66%;
-  @include tablets {
-    width: 95%;
-  }
+    width: 56%;
 }

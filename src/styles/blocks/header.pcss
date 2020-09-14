@@ -1,19 +1,18 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 58px;
 }
 
 .header__menu {
-  width: 55%;
-
-  @include tablets {
-    display: none;
-  }
+    @include tablets {
+        display: none;
+    }
 }
 
-.header__buttons {
-  @include phones {
-    display: none;
-  }
+.header__socials {
+    @include phones {
+        display: none;
+    }
 }
