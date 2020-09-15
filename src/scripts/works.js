@@ -1,121 +1,107 @@
-import Vue from "vue";
-import axios from "axios";
-
-const baseUrl = process.env.BASE_URL;
-
-axios.defaults.baseURL = baseUrl;
-
-const btns = {
-  template: "#slider-btns",
-  methods: {
-    slide(direction) {
-      switch (direction) {
-        case "next":
-          break;
-        case "prev":
-          break;
-      }
-    }
-  }
-};
+import Vue from 'vue';
 
 const thumbs = {
-  template: "#slider-thumbs",
-  props: {
-    works: Array,
-    currentWork: Object
-  }
-};
+    props: ['currentWork', 'works'],
+    template: '#slider-thumbs'
+}
 
-const tags = {
-  template: "#slider-tags",
-  props: {
-    tags: Array
-  }
-};
-
-const info = {
-  template: "#slider-info",
-  components: { tags },
-  props: {
-    currentWork: Object
-  },
-  computed: {
-    tagsArray() {
-      return this.currentWork.techs.split(",");
-    }
-  }
-};
+const btns = {
+    template: '#slider-btns'
+}
 
 const display = {
-  components: { btns, thumbs },
-  props: {
-    works: Array,
-    currentWork: Object,
-    currentIndex: Number
-  },
-  computed: {
-    reversedWorks() {
-      const works = [...this.works];
-      return works.reverse();
+    props: ['currentWork', 'works', 'currentIndex'],
+    template: '#slider-display',
+    components: {
+        thumbs,
+        btns
+    },
+    computed: {
+        slicedWorks() {
+            const works = [...this.works];
+            return works.slice(0, 4);
+        }
     }
-  },
-  template: "#slider-display"
-};
+}
+
+const tags = {
+    props: ['tags'],
+    template: '#slider-tags'
+}
+
+const info = {
+    props: ['currentWork'],
+    template: '#slider-info',
+    components: {
+        tags
+    },
+    computed: {
+        tagsArray() {
+            return this.currentWork.skills.split(',');
+        }
+    }
+}
 
 new Vue({
-  el: "#works-slider-component",
-  data() {
-    return {
-      works: [],
-      currentIndex: 0
-    };
-  },
-  components: {
-    display,
-    info
-  },
-  computed: {
-    currentWork() {
-      return this.works[this.currentIndex];
-    }
-  },
-  methods: {
-    handleSlide(direction) {
-      switch (direction) {
-        case "next":
-          this.currentIndex++;
-          break;
-        case "prev":
-          this.currentIndex--;
-          break;
-      }
+    el: '#works-component',
+    template: '#slider',
+    components: {
+        display,
+        info
     },
-    slideDirectly(workToShow) {
-      this.works.forEach((item, index) => {
-        if (workToShow.id === item.id) {
-          this.currentIndex = index;
+    data() {
+        return {
+            works: [],
+            currentIndex: 0
         }
-      });
     },
-    makeInfititeLoopForCurIndex(value) {
-      const worksAmount = this.works.length - 1;
+    computed: {
+        currentWork() {
+            return this.works[0];
+        }
+    },
+    watch: {
+        currentIndex(value) {
+            this.makeInfititeLoopForCurrentIndex(value);
+        }
+    },
+    methods: {
+        makeInfititeLoopForCurrentIndex(index) {
+            const worksNumber = this.works.length - 1;
+            if (index < 0) {
+                this.currentIndex = worksNumber;
+            }
+            if (index > worksNumber) {
+                this.currentIndex = 0;
+            }
+        },
+        requireImagesToArray(data) {
+            return data.map(item => {
+                const requiredImage = require(`../images/content/${item.photo}`).default;
+                item.photo = requiredImage;
 
-      if (value > worksAmount) this.currentIndex = 0;
-      if (value < 0) this.currentIndex = worksAmount;
+                return item;
+            });
+        },
+        changeSlide(direction) {
+            const lastItem = this.works[this.works.length - 1];
+            switch(direction) {
+                case 'next':
+                    this.works.push(this.works[0]);
+                    this.works.shift();
+                    this.currentIndex++;
+                    break;
+                case 'prev':
+                    this.works.unshift(lastItem);
+                    this.works.pop();
+                    this.currentIndex--;
+                    break;
+            }
+        }
     },
-    async fetchWorks() {
-      const { data: works } = await axios.get("/works/1");
-      this.works = works;
+    created() {
+        const data = require('../data/works.json');
+        
+        this.works = this.requireImagesToArray(data);
     }
-  },
-  watch: {
-    currentIndex(value) {
-      this.makeInfititeLoopForCurIndex(value);
-    }
-  },
-  async mounted() {
-    await this.fetchWorks();
-  },
-  template: "#slider-container"
 });

@@ -1,71 +1,44 @@
-import Vue from "vue";
-import axios from "axios";
-
-const baseUrl = process.env.BASE_URL;
-
-axios.defaults.baseURL = baseUrl;
+import Vue from 'vue';
 
 const skill = {
-  template: "#skill",
-  props: {
-    skillName: String,
-    skillPercents: Number
-  },
-  methods: {
-    drawCircle() {
-      const circle = this.$refs["color-circle"];
-      const dashOffset = parseInt(
-        getComputedStyle(circle).getPropertyValue("stroke-dasharray")
-      );
-      const percent = (dashOffset / 100) * (100 - this.skillPercents);
-
-      circle.style.strokeDashoffset = percent;
+    props: ['skill'],
+    template: '#skill',
+    methods: {
+        drawCircle() {
+            const circle = this.$refs['colored-circle'];
+            const dashArray = parseInt(
+                getComputedStyle(circle).getPropertyValue('stroke-dasharray')
+            );
+            const progress = (dashArray / 100) * (100 - this.skill.progress);
+    
+            circle.style.strokeDashoffset = progress;
+        }
+    },
+    mounted() {
+        this.drawCircle();
     }
-  },
-  mounted() {
-    this.drawCircle();
-  }
-};
+}
 
-const skillsRow = {
-  template: "#skills-row",
-  components: {
-    skill
-  },
-  props: {
-    skills: Array,
-    category: Object
-  },
-  computed: {
-    categorySkills() {
-      const matchSkillAndCatId = skill => skill.category === this.category.id;
-      return this.skills.filter(matchSkillAndCatId);
+const category = {
+    props: ['category'],
+    template: '#category',
+    components: {
+        skill
     }
-  }
-};
+}
 
 new Vue({
-  el: "#skills-component",
-  components: {
-    skillsRow
-  },
-  data: {
-    skills: [],
-    categories: []
-  },
-  methods: {
-    async fetchCategories() {
-      const { data: categories } = await axios.get("/categories/1");
-      this.categories = categories;
+    el: '#skills-component',
+    template: '#skills-widget',
+    components: {
+        category
     },
-    async fetchSkills() {
-      const { data: skills } = await axios.get("/skills/1");
-      this.skills = skills;
+    data() {
+        return {
+            skills: []
+        }
+    },
+    created() {
+        this.skills = require("../data/skills.json");
     }
-  },
-  async created() {
-    await this.fetchCategories();
-    await this.fetchSkills();
-  },
-  template: "#skills-list"
 });

@@ -5,9 +5,14 @@
 .slider-thumbs__item {
     width: 25%;
 
-    &:hover {
-        border: 3px solid $hover-color;
+    &:hover, &.active {
+        outline: 3px solid $hover-color;
+        z-index: 20;
     }
+}
+
+.slider-thumbs__btn {
+    display: block;
 }
 
 .slider-thumbs__pic {

@@ -20,14 +20,14 @@ block content
                                             a.socials__link(href='#')
                                                 +icon(item, 'socials__icon')
                         .header__hamburger-link
-                            a(href='#').hamburger-link
+                            button(type='button').hamburger-link
                                 .hamburger-link__bars
                 .hero__content
                     .userinfo
                         .userinfo__title Личный сайт #[br]#[span.userinfo__occ веб-разработчика]
                         .userinfo__name Елизавета#[br]Ананьева-Рященко
                 .hero__scroll-down
-                    a(href='#').scroll-down-btn
+                    button(type='button').scroll-down-btn
                         .scroll-down-btn__inner Скролл
         section.about
             main.container.about__container
@@ -61,95 +61,15 @@ block content
                         .values__title-text Чем я могу быть полезна вам
                         .values__title-subtext
                             p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                .values__widget
-                    .values__widget-container
-                        -
-                            var skillsCategories = [
-                                ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-                                ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-                            ]
-                        ul.categories
-                            each category in skillsCategories
-                                li.categories__item
-                                    .category
-                                        .category__title #{category[0]}
-                                        ul.skills
-                                            each skill in category[1]
-                                                li.skills__item
-                                                    .skill
-                                                        svg(viewBox='0 0 138 138').skill__circle-shape
-                                                            circle(cx='69' cy='69' r='64').skill__circle.skill__circle--layer-under
-                                                            circle(cx='69' cy='69' r='64' stroke='url(#gradient)' transform='rotate(180 69 69)').skill__circle.skill__circle--layer-above
-                                                            linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0')
-                                                                stop(offset='0%' stop-color='#d0731b')
-                                                                stop(offset='100%' stop-color='#dc9322')
-                                                        .skill__title #{skill}
+                #skills-component
     section.works
         .container.works__container
             .section-title.works__title Мои работы
             .works__content
-                .slider
-                    .slider__display(data-slide='2')
-                        +image('content/slider-1.jpg', 'slider__display-pic')
-                        .slider__display-thumbs
-                            ul.slider-thumbs
-                                - for (var i = 4; i > 0; i--)
-                                    li.slider-thumbs__item
-                                        a(href='#').slider-thumbs__link
-                                            +image(`content/slider-${i}.jpg`, 'slider-thumbs__pic')
-                        .slider__btns
-                            button(type='button').slider__btn.direction-btn.direction-btn--next
-                            button(type='button').slider__btn.direction-btn.direction-btn--prev
-                    .slider__info
-                        .slider__tags
-                            ul.tags
-                                - var tags = ['HTML', 'CSS', 'Javascript']
-                                each tag in tags
-                                    li.tags__item #{tag}
-                        .slider__info-text
-                            .slider__info-title Сайт школы образования
-                            .slider__info-desc
-                                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                            .slider__info-link
-                                a(href='#').iconed-link Посмотреть сайт
+                #works-component
     section.reviews
         .container.reviews__container
-            .reviews-slider
-                .reviews-slider__header
-                    .section-title.reviews-slider__title Что обо мне говорят
-                    .reviews-slider__btns
-                        button(type='button').reviews-slider__btn.round-btn.round-btn--prev
-                        button(type='button').reviews-slider__btn.round-btn.round-btn--next
-                .reviews-slider__content
-                    ul.reviews-slider__quotes
-                        - 
-                            var quotes = [
-                                {
-                                    text: 'Этот парень проходил обучение вебразработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-                                    picture: 'dmitriy',
-                                    name: 'Ковальчук Дмитрий',
-                                    occ: 'Основатель Loftschool'
-                                },
-                                {
-                                    text: 'Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах.',
-                                    picture: 'vladimir',
-                                    name: 'Владимир Сабанцев',
-                                    occ: 'Преподаватель'
-                                }
-                            ]
-                        - for (var i = 0; i < 2; i++)
-                            li.reviews-slider__quotes-item
-                                .quote
-                                    .quote__text
-                                        p #{quotes[i].text}
-                                    .quote__author
-                                        .author-display
-                                            .author-display__picture
-                                                .author-display__picture-style
-                                                    +image(`content/${quotes[i].picture}.jpg`, 'author-display__pic')
-                                            .author-display__about
-                                                .author-display__name #{quotes[i].name}
-                                                .author-display__occ #{quotes[i].occ}
+            #reviews-component
     footer.footer
         .container.footer__container
             .footer__copyright
