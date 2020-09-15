@@ -1,6 +1,20 @@
 .user__picture {
     flex-shrink: 0;
     margin-bottom: 78px;
+
+    @include desktop {
+        margin-bottom: 75px;
+    }
+
+    @include tablets {
+        padding-top: 11px;
+        margin-bottom: 21px;
+    }
+
+    @include phones {
+        padding-top: 0;
+        margin-bottom: 41Px;
+    }
 }
 
 .user__picture-style {
@@ -9,28 +23,84 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
+
+    @include tablets {
+        width: 213.34px;
+        height: 213.34px;
+    }
+
+    @include phones {
+        width: 170Px;
+        height: 170Px;
+    }
 }
 
 .user__data {
-    width: 75%; //70%
+    width: 70%;
     font-weight: 600;
+    font-size: 16px;
     line-height: 22px;
     margin: 0 auto;
 
     td {
         width: 50%;
         padding-bottom: 17px;
+        vertical-align: baseline;
     }
     
     tr:last-child td {
         padding-bottom: 0;
     }
+
+    @include desktop {
+        width: 86%;
+    }
+
+    @include tablets {
+        width: 100%;
+        font-size: 14Px;
+        line-height: 19Px;
+
+        td {
+            padding-bottom: 9Px;
+        }
+    }
+
+    @include phones {
+        width: 100%;
+    }
 }
 
 .user__data-title {
     color: rgba($text-color, .3);
+
+    @include tablets {
+        padding-left: 2.34vw;
+    }
+
+    @include phones {
+        padding-left: 0;
+    }
+}
+
+.user__data-content {
+    @include desktop {
+        padding-left: 8px;
+    }
+    
+    @include tablets {
+        padding-left: 12Px;
+    }
+
+    @include phones {
+        padding-left: 3vw;
+    }
 }
 
 .user__lastname {
     white-space: nowrap;
+
+    @include tablets {
+        white-space: normal;
+    }
 }

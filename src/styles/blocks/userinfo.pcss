@@ -1,14 +1,40 @@
 .userinfo {
     display: flex;
+
+    @include desktop {
+        padding-right: 1vw;
+    }
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+    }
 }
 
 .userinfo__title {
-    font-size: 18px;
     font-weight: 600;
+    font-size: 18px;
     line-height: 30px;
     color: rgba($text-color, .5);
     text-align: right;
     margin-right: 56px;
+
+    @include desktop {
+        margin-right: 34px;
+    }
+
+    @include tablets {
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 27.7px;
+    }
+
+    @include phones {
+        font-size: 14Px;
+        line-height: 19Px;
+        margin-bottom: 8Px;
+    }
 }
 
 .userinfo__occ {
@@ -16,8 +42,22 @@
 }
 
 .userinfo__name {
-    font-size: 72px;
     font-weight: 800;
+    font-size: 72px;
     line-height: 60px;
     white-space: nowrap;
+
+    @include desktop {
+        white-space: normal;
+    }
+
+    @include tablets {
+        font-size: 48Px;
+        line-height: 48Px;
+        text-align: center;
+    }
+
+    @include phones {
+        font-size: 36Px;
+    }
 }

@@ -1,15 +1,34 @@
 .categories__item {
     width: 100%;
-    margin-bottom: 48px;
+    margin-bottom: 32px; //48px
 
     &:last-child {
         margin-bottom: 0;
     }
+
+    @include tablets {
+        margin-bottom: 22Px;
+    }
+
+    @include phones {
+        margin-bottom: 50Px;
+    }
 }
 
 .category__title {
-    font-size: 24px;
     font-weight: bold;
+    font-size: 24px;
     line-height: 33px;
     margin-bottom: 36px;
+
+    @include tablets {
+        text-align: center;
+        font-size: 18Px;
+        line-height: 25Px;
+        margin-bottom: 24Px;
+    }
+
+    @include phones {
+        margin-bottom: 32Px;
+    }
 }

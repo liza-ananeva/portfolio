@@ -1,8 +1,11 @@
 html {
     @include desktop {
-        font-size: 15px;
+        font-size: 16px;
     }
     @include tablets {
+        font-size: 15px;
+    }
+    @include phones {
         font-size: 14px;
     }
 }
@@ -24,17 +27,19 @@ body {
 * {
     box-sizing: border-box;
 }
-/* 
-.wrapper {
-    min-height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-*/
+
 .container {
     width: 95%;
     max-width: 1480px;
     margin: 0 auto;
+
+    @include desktop {
+        max-width: 1100px;
+    }
+
+    @include phones {
+        width: 85%;
+    }
 }
 
 ul {

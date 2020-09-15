@@ -1,21 +1,31 @@
-script(type="text/x-template")#reviews
-  .reviews
-    .reviews__header
-      .reviews__title.section-title Что обо мне говорят
-      .reviews__buttons
-        button(type="button" @click="slide('prev')").reviews__btn.reviews__btn_prev
-        button(type="button" @click="slide('next')").reviews__btn.reviews__btn_next
-    .reviews__content
-      ul.reviews__content-wrapper(ref="reviews-slider")
-        li.reviews__content-item(v-for="review in reviews")
-          .quote
-            .quote__text
-              p {{review.text}} 
-            .quote__user
-              .user-min
-                .user-min__avatar
-                  .user-min__pic-wrapper
-                    img(:src="`http://localhost:8000/${review.photo}`").user-min__avatar-pic
-                .user-min__info
-                  .user-min__name {{review.author}}
-                  .user-min__occ {{review.occ}}
+script(type="text/x-template")#reviews-slider
+    .reviews-slider
+        .reviews-slider__header
+            .section-title.reviews-slider__title Что обо мне говорят
+            .reviews-slider__btns
+                button(
+                    type='button'
+                    @click = 'previous()'
+                    ref='prevBtn'
+                    :class='{disabled: state === "begin"}'
+                ).reviews-slider__btn.round-btn.round-btn--prev
+                button(
+                    type='button'
+                    @click = 'next()'
+                    ref='nextBtn'
+                    :class='{disabled: state === "end"}'
+                ).reviews-slider__btn.round-btn.round-btn--next
+        .reviews-slider__content
+            flickity(ref='flickity' :options='flickityOptions').reviews-slider__quotes
+                .reviews-slider__quotes-item(v-for='review in reviews')
+                    .quote
+                        .quote__text
+                            p {{review.text}}
+                        .quote__author
+                            .author-display
+                                .author-display__picture
+                                    .author-display__picture-style
+                                        img(:src='review.photo').author-display__pic
+                                .author-display__about
+                                    .author-display__name {{review.author}}
+                                    .author-display__occ {{review.occ}}

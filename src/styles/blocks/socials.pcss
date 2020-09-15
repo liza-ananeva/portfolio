@@ -3,42 +3,58 @@
 
     &--round-borders {
         .socials__item {
-            width: 50px;
-            height: 50px;
-            border: 1px solid rgba($text-color, .3);
+            width: 50Px;
+            height: 50Px;
+            border: 1Px solid rgba($text-color, .3);
             border-radius: 50%;
-            margin-right: 21px;
+            margin-right: 21Px;
 
             &:hover {
-                border-color: #ff9a00;
+                border-color: $hover-color;
 
                 .socials__icon {
-                    fill: #ff9a00;
+                    fill: $hover-color;
                 }
             }
-        }
-        
-        .socials__link {
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: relative;
+
+            @include desktop {
+                margin-right: 1.75vw;
+            }
+
+            @include tablets {
+                margin-right: 2.735vw; //21px
+            }
+
+            @include phones {
+                margin-right: 21Px;
+            }
         }
         
         .socials__icon {
             width: 20px;
             height: 20px;
-            fill: rgba($text-color, .3);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
     }
+
+    &--hamburger {
+        .socials__item {
+            margin-right: 39Px;
+        }
+
+        .socials__icon {
+            fill: $east-bay-color;
+        }
+    }
 }
 
 .socials__item {
-    margin-right: 35px;
+    width: 25Px;
+    height: 25Px;
+    margin-right: 35Px;
     
     &:last-child {
         margin-right: 0px;
@@ -46,13 +62,20 @@
 
     &:hover {
         .socials__icon {
-            fill: #ff9a00;
+            fill: $hover-color;
         }
     }
 }
 
+.socials__link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
 .socials__icon {
-    width: 25px;
-    height: 25px;
+    width: 25Px;
+    height: 25Px;
     fill: rgba($text-color, .3);
 }

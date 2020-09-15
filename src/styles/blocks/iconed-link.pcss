@@ -18,4 +18,19 @@
     &:hover {
         text-decoration: underline;
     }
+
+    @include tablets {
+        font-size: 14Px;
+        line-height: 19Px;
+
+        &:before {
+            margin-right: 20Px;
+        }
+    }
+
+    @include phones {
+        &:before {
+            margin-right: 19Px;
+        }
+    }
 }

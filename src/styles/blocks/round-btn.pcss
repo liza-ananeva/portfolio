@@ -1,17 +1,17 @@
 .round-btn {
     position: relative;
     display: block;
-    width: 53px;
-    height: 53px;
-    border: 2px solid $text-color;
+    width: 53Px;
+    height: 53Px;
+    border: 2Px solid $text-color;
     border-radius: 50%;
 
     &:before {
         content: '';
         display: block;
         background: svg-load('arrow-down.svg', fill=$text-color) center center / contain no-repeat;
-        width: 16px;
-        height: 16px;
+        width: 16Px;
+        height: 16Px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -25,10 +25,15 @@
     }
 
     &:hover {
-        border-color: #ff9a00;
+        border-color: $hover-color;
 
         &:before {
-            background: svg-load('arrow-down.svg', fill=#ff9a00) center center / contain no-repeat;
+            background: svg-load('arrow-down.svg', fill=$hover-color) center center / contain no-repeat;
         }
+    }
+
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
     }
 }

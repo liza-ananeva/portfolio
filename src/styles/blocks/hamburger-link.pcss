@@ -1,0 +1,36 @@
+.hamburger-link {
+    height: 24Px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+        .hamburger-link__bars {
+            &, &:before, &:after {
+                background-color: $hover-color;
+            }
+        }
+    }
+}
+
+.hamburger-link__bars {
+    &, &:before, &:after {
+        width: 29.6Px;
+        height: 4Px;
+        background-color: $text-color;
+    }
+
+    &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:after {
+        bottom: 0;
+    }
+}

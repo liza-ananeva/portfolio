@@ -12,18 +12,22 @@ block content
                             each item in ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
                                 li.menu__item
                                     a.menu__link(href='#', title=`${item}`) #{item}
-                    .header__socials
-                        ul.socials
-                            each item in ['instagram', 'github', 'vk', 'envelope']
-                                    li.socials__item
-                                        a.socials__link(href='#')
-                                            +icon(item, 'socials__icon')    
+                    .header__btns
+                        .header__socials
+                            ul.socials
+                                each item in ['instagram', 'github', 'vk', 'envelope']
+                                        li.socials__item
+                                            a.socials__link(href='#')
+                                                +icon(item, 'socials__icon')
+                        .header__hamburger-link
+                            button(type='button').hamburger-link
+                                .hamburger-link__bars
                 .hero__content
                     .userinfo
-                        .userinfo__title Личный сайт #[span.userinfo__occ веб разработчика]
+                        .userinfo__title Личный сайт #[br]#[span.userinfo__occ веб-разработчика]
                         .userinfo__name Елизавета#[br]Ананьева-Рященко
                 .hero__scroll-down
-                    a(href='#').scroll-down-btn
+                    button(type='button').scroll-down-btn
                         .scroll-down-btn__inner Скролл
         section.about
             main.container.about__container
@@ -45,10 +49,10 @@ block content
                                     td.user__data-content #{item[1]}
                 .about__intro
                     .about__greeting-text Привет, меня зовут
-                    .section-title.about__title Елизавета #[span.user__lastname Ананьева-Рященко]
+                    .about__title Елизавета #[span.user__lastname Ананьева-Рященко]
                     .about__desc
                         p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                    .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,#[br]как тут всё классно и красиво!
+                    .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
     section.values
         main.container.values__container
             .values__wrapper
@@ -57,102 +61,22 @@ block content
                         .values__title-text Чем я могу быть полезна вам
                         .values__title-subtext
                             p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                .values__widget
-                    .values__widget-container
-                        -
-                            var skillsCategories = [
-                                ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-                                ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-                            ]
-                        ul.categories
-                            each category in skillsCategories
-                                li.categories__item
-                                    .category
-                                        .category__title #{category[0]}
-                                        ul.skills
-                                            each skill in category[1]
-                                                li.skills__item
-                                                    .skill
-                                                        svg(viewBox='0 0 138 138').skill__circle-shape
-                                                            circle(cx='69' cy='69' r='64').skill__circle.skill__circle--layer-under
-                                                            circle(cx='69' cy='69' r='64' stroke='url(#gradient)' transform='rotate(180 69 69)').skill__circle.skill__circle--layer-above
-                                                            linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0')
-                                                                stop(offset='0%' stop-color='#d0731b')
-                                                                stop(offset='100%' stop-color='#dc9322')
-                                                        .skill__title #{skill}
+                #skills-component
     section.works
         .container.works__container
             .section-title.works__title Мои работы
             .works__content
-                .slider
-                    .slider__display(data-slide='2')
-                        +image('content/slider-1.jpg', 'slider__display-pic')
-                        .slider__display-thumbs
-                            ul.slider-thumbs
-                                - for (var i = 4; i > 0; i--)
-                                    li.slider-thumbs__item
-                                        a(href='#').slider-thumbs__link
-                                            +image(`content/slider-${i}.jpg`, 'slider-thumbs__pic')
-                        .slider__btns
-                            button(type='button').slider__btn.direction-btn.direction-btn--next
-                            button(type='button').slider__btn.direction-btn.direction-btn--prev
-                    .slider__info
-                        .slider__tags
-                            ul.tags
-                                - var tags = ['HTML', 'CSS', 'Javascript']
-                                each tag in tags
-                                    li.tags__item #{tag}
-                        .slider__info-text
-                            .slider__info-title Сайт школы образования
-                            .slider__info-desc
-                                p Этот парень проходил обучение#[br]веб-разработке не где-то, а в LoftSchool!#[br]2 месяца только самых тяжелых#[br]испытаний и бессонных ночей!
-                            .slider__info-link
-                                a(href='#').iconed-link Посмотреть сайт
+                #works-component
     section.reviews
         .container.reviews__container
-            .reviews-slider
-                .reviews-slider__header
-                    .section-title.reviews-slider__title Что обо мне говорят
-                    .reviews-slider__btns
-                        button(type='button').reviews-slider__btn.round-btn.round-btn--prev
-                        button(type='button').reviews-slider__btn.round-btn.round-btn--next
-                .reviews-slider__content
-                    ul.reviews-slider__quotes
-                        - 
-                            var quotes = [
-                                {
-                                    text: 'Этот парень проходил обучение вебразработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-                                    picture: 'dmitriy',
-                                    name: 'Ковальчук Дмитрий',
-                                    occ: 'Основатель Loftschool'
-                                },
-                                {
-                                    text: 'Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах.',
-                                    picture: 'vladimir',
-                                    name: 'Владимир Сабанцев',
-                                    occ: 'Преподаватель'
-                                }
-                            ]
-                        - for (var i = 0; i < 2; i++)
-                            li.reviews-slider__quotes-item
-                                .quote
-                                    .quote__text
-                                        p #{quotes[i].text}
-                                    .quote__author
-                                        .author-display
-                                            .author-display__picture
-                                                .author-display__picture-style
-                                                    +image(`content/${quotes[i].picture}.jpg`, 'author-display__pic')
-                                            .author-display__about
-                                                .author-display__name #{quotes[i].name}
-                                                .author-display__occ #{quotes[i].occ}
+            #reviews-component
     footer.footer
         .container.footer__container
             .footer__copyright
                 .footer__copyright-year &copy; 2020
                 .footer__copyright-userinfo
                     .footer__copyright-username Елизавета#[br]Ананьева-Рященко
-                    .footer__copyright-usertext Личный сайт#[br]веб-разработчика
+                    .footer__copyright-usertext Личный сайт #[span.footer__copyright-userocc веб-разработчика]
             .footer__info
                 nav.footer__menu
                     ul.menu
@@ -160,18 +84,35 @@ block content
                             li.menu__item
                                 a.menu__link(href='#', title=`${item}`) #{item}
                 .footer__inner
-                    .footer__inner-column
+                    .footer__inner-column.footer__inner-column--contacts
                         .footer__contacts
                             .footer__comment
                                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                             .footer__socials
                                 ul.socials.socials--round-borders
-                                    each item in ['instagram', 'github', 'vk', 'envelope']
+                                    each item in ['instagram', 'vk', 'github', 'envelope']
                                             li.socials__item
                                                 a.socials__link(href='#')
                                                     +icon(item, 'socials__icon')    
-                    .footer__inner-column
+                    .footer__inner-column.footer__inner-column--quote
                         .footer__quote
                             .footer__quote-text
                                 p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете.
                             .footer__quote-author Martin Golding
+    .hamburger
+        .hamburger__logo
+            .logo ЕА
+        .hamburger__container
+            a.hamburger__close(href='#')
+                +icon('cross', 'hamburger__close-icon')
+            .hamburger__menu
+                ul.menu.menu--hamburger
+                    each item in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы']
+                        li.menu__item
+                            a.menu__link(href='#', title=`${item}`) #{item}
+            .hamburger__socials
+                ul.socials.socials--hamburger
+                    each item in ['instagram', 'vk', 'github', 'envelope']
+                            li.socials__item
+                                a.socials__link(href='#')
+                                    +icon(item, 'socials__icon')

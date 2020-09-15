@@ -1,0 +1,44 @@
+[
+    {
+        "category": "Front-end",
+        "skills": [
+            {
+                "title": "HTML5",
+                "progress": "75"
+            },
+            {
+                "title": "CSS3",
+                "progress": "71"
+            },
+            {
+                "title": "Javascript",
+                "progress": "88"
+            },
+            {
+                "title": "Jquery и Vue.js",
+                "progress": "43"
+            }
+        ]
+    },
+    {
+        "category": "Workflow",
+        "skills": [
+            {
+                "title": "GIT",
+                "progress": "51"
+            },
+            {
+                "title": "Terminal",
+                "progress": "38"
+            },
+            {
+                "title": "Gulp",
+                "progress": "24"
+            },
+            {
+                "title": "Webpack",
+                "progress": "58"
+            }
+        ]
+    }
+]
